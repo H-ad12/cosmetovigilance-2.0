@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cosmetovigilance 2.0 - اليقظة التجميلية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div id="app">
+
+    <!-- ============================================================
+    PAGE 1 – WELCOME
+    ============================================================ -->
+    <div id="page-welcome" class="page active">
+      <div class="glass">
+        <div class="text-center">
+          <div class="hero-icon">🧪</div>
+          <p class="title-en">Cosmetovigilance 2.0</p>
+          <h1 class="title-ar">مرحباً بكم في عصر الوعي التجميلي</h1>
+
+          <p class="subtitle-en">Safe Beauty or Hidden Risks?</p>
+          <h2 class="subtitle-ar">الجمال الآمن أم المخاطر الخفية؟</h2>
+
+          <div class="body-ar hero-copy">
+            مع الانتشار الواسع لمستحضرات التجميل المتاحة دون وصفة طبية، أصبح استخدامها جزءاً من الروتين اليومي لملايين الأشخاص. لكن هل جميع هذه المنتجات آمنة كما تبدو؟
+            <br />
+            يهدف علم <strong>Cosmetovigilance</strong> (اليقظة التجميلية) إلى مراقبة الآثار الجانبية والمشكلات المرتبطة باستخدام مستحضرات التجميل، والكشف المبكر عن المخاطر المحتملة لضمان الاستخدام الآمن وحماية صحة المستهلكين.
+          </div>
+          <div class="body-en hero-copy">
+            With the widespread availability of over-the-counter cosmetic products, their use has become part of the daily routine for millions. But are all these products as safe as they seem?
+            <br />
+            <strong>Cosmetovigilance</strong> aims to monitor adverse effects and problems associated with cosmetic products, and to detect potential risks early to ensure safe use and protect consumer health.
+          </div>
+
+          <div class="info-grid">
+            <div class="info-card">
+              <span class="icon">🔒</span>
+              <span class="label-ar">إجابات مجهولة</span>
+              <span class="label-en">Anonymous Responses</span>
+            </div>
+            <div class="info-card">
+              <span class="icon">⏱</span>
+              <span class="label-ar">يستغرق ٢-٣ دقائق</span>
+              <span class="label-en">Takes 2–3 Minutes</span>
+            </div>
+            <div class="info-card">
+              <span class="icon">📊</span>
+              <span class="label-ar">بحث أكاديمي فقط</span>
+              <span class="label-en">Academic Research Only</span>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" onclick="goToPage('page-register')">
+            ابدأ الاستبيان
+            <span class="inline-english">Start Survey</span>
+          </button>
+        </div>
+
+        <div class="admin-footer-link">
+          <a href="#" id="adminLink">🔐 Admin</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+    PAGE 2 – REGISTER
+    ============================================================ -->
+    <div id="page-register" class="page">
+      <div class="glass">
+        <div class="progress-wrapper">
+          <div class="progress-track">
+            <div class="progress-fill" style="width:5%;"></div>
+          </div>
+          <div class="progress-label">
+            <span class="step-num">الخطوة ١ من ٤</span>
+            <span class="step-total">Step 1 of 4</span>
+          </div>
+        </div>
+
+        <p class="title-en">Participant Information</p>
+        <h2 class="title-ar">معلومات المشارك</h2>
+
+        <form id="registerForm">
+          <div class="form-group">
+            <label class="label-ar">الاسم الكامل <span class="required-badge">*</span></label>
+            <span class="label-en">Full Name</span>
+            <input type="text" id="reg-fullname" required placeholder="أدخل اسمك الكامل" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="label-ar">القسم <span class="required-badge">*</span></label>
+              <span class="label-en">Department</span>
+              <input type="text" id="reg-department" required placeholder="مثال: الصيدلة" />
+            </div>
+            <div class="form-group">
+              <label class="label-ar">السنة الدراسية <span class="required-badge">*</span></label>
+              <span class="label-en">Study Year</span>
+              <input type="text" id="reg-year" required placeholder="مثال: سنة ثالثة" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="label-ar">الجنس <span class="required-badge">*</span></label>
+              <span class="label-en">Gender</span>
+              <select id="reg-gender" required>
+                <option value="">اختر الجنس</option>
+                <option value="ذكر">ذكر</option>
+                <option value="أنثى">أنثى</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="label-ar">العمر <span class="required-badge">*</span></label>
+              <span class="label-en">Age</span>
+              <input type="number" id="reg-age" required min="18" max="99" placeholder="مثال: 22" />
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-secondary" onclick="goToPage('page-welcome')">رجوع</button>
+            <button type="submit" class="btn btn-primary">التالي →</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ============================================================
+    PAGES 3+ – SURVEY WIZARD (dynamic)
+    ============================================================ -->
+    <div id="page-survey" class="page">
+      <div class="glass">
+        <div class="progress-wrapper">
+          <div class="progress-track">
+            <div class="progress-fill" id="surveyProgress" style="width:0%;"></div>
+          </div>
+          <div class="progress-label">
+            <span class="step-num" id="surveyStepLabel">السؤال ١ من ١١</span>
+            <span class="step-total" id="surveyStepEn">Question 1 of 11</span>
+          </div>
+        </div>
+
+        <div id="questionContainer">
+          <!-- rendered by JS -->
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary" id="surveyBackBtn">رجوع</button>
+          <button type="button" class="btn btn-primary" id="surveyNextBtn">التالي →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+    PAGE – REVIEW ANSWERS
+    ============================================================ -->
+    <div id="page-review" class="page">
+      <div class="glass">
+        <div class="progress-wrapper">
+          <div class="progress-track">
+            <div class="progress-fill" style="width:100%;"></div>
+          </div>
+          <div class="progress-label">
+            <span class="step-num">مراجعة الإجابات</span>
+            <span class="step-total">Review Answers</span>
+          </div>
+        </div>
+
+        <p class="title-en">Review Your Answers</p>
+        <h2 class="title-ar">مراجعة إجاباتك</h2>
+
+        <div id="reviewContainer">
+          <!-- rendered by JS -->
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary" onclick="goToPage('page-survey')">رجوع للاستبيان</button>
+          <button type="button" class="btn btn-success" id="submitSurveyBtn">إرسال الاستبيان</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+    PAGE – THANK YOU
+    ============================================================ -->
+    <div id="page-thankyou" class="page">
+      <div class="glass text-center">
+        <span class="thankyou-icon">✅</span>
+        <p class="thankyou-title-en">Thank You For Participating</p>
+        <h1 class="thankyou-title-ar">شكراً لمشاركتكم</h1>
+        <div class="thankyou-msg-ar hero-copy">
+          تم استلام إجاباتكم بنجاح.
+          <br />
+          مساهمتكم تساعد في دعم البحث العلمي وتحسين فهم سلامة مستحضرات التجميل.
+        </div>
+        <div class="thankyou-msg-en hero-copy">
+          Your responses have been submitted successfully.
+          <br />
+          Your contribution helps support scientific research and improve the understanding of cosmetic product safety.
+        </div>
+        <button class="btn btn-primary" id="resetSurveyBtn">بدء استبيان جديد</button>
+      </div>
+    </div>
+
+    <!-- ============================================================
+    PAGE – ADMIN LOGIN
+    ============================================================ -->
+    <div id="page-admin-login" class="page">
+      <div class="glass admin-login-box">
+        <div class="text-center">
+          <div class="hero-icon">🔐</div>
+          <p class="title-en">Admin Login</p>
+          <h2 class="title-ar">تسجيل الدخول</h2>
+        </div>
+
+        <form id="admin-login-form">
+          <div class="form-group">
+            <label class="label-ar">البريد الإلكتروني</label>
+            <span class="label-en">Email</span>
+            <input type="email" id="admin-username" placeholder="example@domain.com" required />
+          </div>
+          <div class="form-group">
+            <label class="label-ar">كلمة المرور</label>
+            <span class="label-en">Password</span>
+            <input type="password" id="admin-password" placeholder="••••••••" required />
+          </div>
+          <div id="admin-login-error"></div>
+          <button type="submit" class="btn btn-primary w-full">دخول / Login</button>
+        </form>
+
+        <div class="admin-footer-link">
+          <a href="#" onclick="goToPage('page-welcome'); return false;">← العودة للاستبيان</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+    PAGE – ADMIN DASHBOARD
+    ============================================================ -->
+    <div id="page-admin-dashboard" class="page">
+      <div class="glass">
+        <div class="admin-header">
+          <p class="title-en">Admin Dashboard</p>
+          <h2 class="title-ar">لوحة التحكم</h2>
+          <div class="admin-actions">
+            <button class="btn btn-success btn-sm" onclick="exportCSV()">📤 Export CSV</button>
+            <button class="btn btn-danger btn-sm" id="adminLogoutBtn">🚪 Logout</button>
+          </div>
+        </div>
+
+        <div class="admin-stats" id="adminStats">
+          <div class="stat-card">
+            <div class="stat-number" id="statTotal">0</div>
+            <div class="stat-label">إجمالي المشاركين</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="statCompleted">0</div>
+            <div class="stat-label">استبيانات مكتملة</div>
+          </div>
+        </div>
+
+        <div class="search-row">
+          <input type="text" id="adminSearch" placeholder="بحث بالاسم أو القسم..." />
+          <button class="btn btn-secondary btn-sm" onclick="document.getElementById('adminSearch').value=''; renderAdminDashboard();">مسح</button>
+        </div>
+
+        <div class="admin-table-wrapper">
+          <table class="admin-table" id="adminTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>الاسم</th>
+                <th>القسم</th>
+                <th>العمر</th>
+                <th>التاريخ</th>
+                <th>الحالة</th>
+                <th>الإجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="adminTableBody">
+              <!-- rendered by JS -->
+            </tbody>
+          </table>
+        </div>
+        <p id="adminNoData" class="admin-no-data">لا توجد بيانات بعد.</p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+    MODAL – VIEW RESPONSE
+    ============================================================ -->
+    <div class="modal-overlay" id="responseModal">
+      <div class="modal-content">
+        <button class="close-modal">✕</button>
+        <div class="modal-title" id="modalTitle">تفاصيل المشارك</div>
+        <div id="modalBody">
+          <!-- rendered by JS -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============================================================
+  JAVASCRIPT MODULES
+  ============================================================ -->
+  <script type="module" src="js/app.js"></script>
+  <!-- Expose goToPage globally for inline onclick -->
+  <script>
+    window.goToPage = function(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const target = document.getElementById(pageId);
+      if (target) {
+        target.classList.add('active');
+        target.style.animation = 'none';
+        requestAnimationFrame(() => {
+          target.style.animation = 'fadeSlideUp 0.5s ease forwards';
+        });
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
+
+</body>
+</html>

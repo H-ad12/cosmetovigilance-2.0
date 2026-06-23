@@ -51,8 +51,7 @@ function renderTable(data) {
   const search = document.getElementById('adminSearch').value.trim().toLowerCase();
   const filtered = data.filter(item => {
     const name = (item.fullName || '').toLowerCase();
-    const dept = (item.department || '').toLowerCase();
-    return name.includes(search) || dept.includes(search);
+    return name.includes(search);
   });
 
   const tbody = document.getElementById('adminTableBody');
@@ -73,7 +72,6 @@ function renderTable(data) {
       <tr>
         <td>${idx + 1}</td>
         <td>${item.fullName || '—'}</td>
-        <td>${item.department || '—'}</td>
         <td>${item.age || '—'}</td>
         <td>${date}</td>
         <td>${completed}</td>
@@ -109,7 +107,6 @@ export async function viewResponse(participantId) {
       <div class="review-section">
         <div class="section-title">👤 Participant Info</div>
         <div class="review-item"><span class="label">الاسم</span><span class="value">${participant.fullName || '—'}</span></div>
-        <div class="review-item"><span class="label">القسم</span><span class="value">${participant.department || '—'}</span></div>
         <div class="review-item"><span class="label">السنة</span><span class="value">${participant.studyYear || '—'}</span></div>
         <div class="review-item"><span class="label">الجنس</span><span class="value">${participant.gender || '—'}</span></div>
         <div class="review-item"><span class="label">العمر</span><span class="value">${participant.age || '—'}</span></div>
@@ -174,7 +171,7 @@ export async function exportCSV() {
       return;
     }
 
-    const headers = ['fullName', 'department', 'studyYear', 'gender', 'age', 'registeredAt'];
+    const headers = ['fullName', 'studyYear', 'gender', 'age', 'registeredAt'];
     const qIds = questions.map(q => q.id);
     const allHeaders = [...headers, ...qIds];
 
@@ -186,7 +183,6 @@ export async function exportCSV() {
         : {};
       const row = [
         `"${(item.fullName || '').replace(/"/g, '""')}"`,
-        `"${(item.department || '').replace(/"/g, '""')}"`,
         `"${(item.studyYear || '').replace(/"/g, '""')}"`,
         `"${(item.gender || '').replace(/"/g, '""')}"`,
         `"${(item.age || '')}"`,

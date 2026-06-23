@@ -3,11 +3,18 @@
     {
       "id": "a0c3037a-578d-4642-ab0d-fd6688660983",
       "fullName": "haider ali jawad",
-      "department": "علوم الحاسوب",
       "studyYear": "dsad",
       "gender": "ذكر",
       "age": 21,
       "registeredAt": "2026-06-20T18:44:56.055Z"
+    },
+    {
+      "id": "1dbb7e7d-b262-4b78-a0f0-184fc9a9aecf",
+      "fullName": "haider ali jawad",
+      "studyYear": "dsad",
+      "gender": "ذكر",
+      "age": 21,
+      "registeredAt": "2026-06-20T18:50:42.221Z"
     }
   ],
   "responses": []

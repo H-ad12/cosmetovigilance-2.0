@@ -19,13 +19,12 @@ const sanitizeAnswers = (value) => {
 router.post('/register', async (req, res, next) => {
   try {
     const fullName = sanitizeInput(req.body.fullName);
-    const department = sanitizeInput(req.body.department);
     const studyYear = sanitizeInput(req.body.studyYear);
     const gender = sanitizeInput(req.body.gender);
     const age = Number(req.body.age);
 
     const allowedGenders = ['ذكر', 'أنثى'];
-    if (!fullName || !department || !studyYear || !gender || !Number.isInteger(age)) {
+    if (!fullName || !studyYear || !gender || !Number.isInteger(age)) {
       return res.status(400).json({ error: 'All fields are required and age must be a whole number' });
     }
     if (!allowedGenders.includes(gender)) {
@@ -35,7 +34,7 @@ router.post('/register', async (req, res, next) => {
       return res.status(400).json({ error: 'Age must be between 18 and 120' });
     }
 
-    const participant = await addParticipant({ fullName, department, studyYear, gender, age });
+    const participant = await addParticipant({ fullName, studyYear, gender, age });
     res.status(201).json({ id: participant.id });
   } catch (error) {
     next(error);

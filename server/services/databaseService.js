@@ -35,7 +35,6 @@ const addParticipant = async (data) => {
   const participant = {
     id: makeId(),
     fullName: data.fullName,
-    department: data.department,
     studyYear: data.studyYear,
     gender: data.gender,
     age: data.age,
@@ -69,7 +68,6 @@ const getAllParticipantsWithResponses = async () => {
   return db.participants.map((participant) => ({
     id: participant.id,
     fullName: participant.fullName,
-    department: participant.department,
     studyYear: participant.studyYear,
     gender: participant.gender,
     age: participant.age,

@@ -63,22 +63,21 @@ function goToPage(pageId) {
 async function registerParticipant(e) {
   e.preventDefault();
   const fullName = $('reg-fullname').value.trim();
-  const department = $('reg-department').value.trim();
   const studyYear = $('reg-year').value.trim();
   const gender = $('reg-gender').value;
   const age = $('reg-age').value.trim();
 
-  if (!fullName || !department || !studyYear || !gender || !age) {
+  if (!fullName || !studyYear || !gender || !age) {
     alert('الرجاء تعبئة جميع الحقول المطلوبة. / Please fill all required fields.');
     return;
   }
 
   try {
     const response = await apiClient.post('/register', {
-      fullName, department, studyYear, gender, age
+      fullName, studyYear, gender, age
     });
 
-    participantData = { fullName, department, studyYear, gender, age, id: response.id };
+    participantData = { fullName, studyYear, gender, age, id: response.id };
     window._participantData = participantData; // for review
 
     // Reset survey state
@@ -118,7 +117,7 @@ function resetSurvey() {
   participantData = {};
   window._participantData = {};
   // Clear form
-  ['reg-fullname', 'reg-department', 'reg-year', 'reg-age'].forEach(id => {
+  ['reg-fullname', 'reg-year', 'reg-age'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.value = '';
   });

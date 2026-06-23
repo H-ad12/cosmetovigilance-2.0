@@ -6,7 +6,7 @@ async function main() {
     let res = await fetch(`${base}/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ fullName: 'Audit User', department: 'Audit Dept', studyYear: 'Year 1', gender: 'ذكر', age: '30' })
+      body: JSON.stringify({ fullName: 'Audit User', studyYear: 'Year 1', gender: 'ذكر', age: '30' })
     });
     console.log('register status', res.status, 'content-type', res.headers.get('content-type'));
     const regBody = await res.text();

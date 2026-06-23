@@ -307,13 +307,12 @@ export function surveyBack(goToPageFn, renderReviewFn) {
 //  REVIEW
 // ============================================================
 export function renderReview() {
-  const p = window._participantData || { fullName: '', department: '', studyYear: '', gender: '', age: '' };
+  const p = window._participantData || { fullName: '', studyYear: '', gender: '', age: '' };
   const answers = surveyAnswers;
   let html = `
     <div class="review-section">
       <div class="section-title">👤 معلومات المشارك / Participant Info</div>
       <div class="review-item"><span class="label">الاسم الكامل</span><span class="value">${p.fullName}</span></div>
-      <div class="review-item"><span class="label">القسم</span><span class="value">${p.department}</span></div>
       <div class="review-item"><span class="label">السنة الدراسية</span><span class="value">${p.studyYear}</span></div>
       <div class="review-item"><span class="label">الجنس</span><span class="value">${p.gender}</span></div>
       <div class="review-item"><span class="label">العمر</span><span class="value">${p.age}</span></div>
